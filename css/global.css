@@ -1,0 +1,96 @@
+@import "reset.css";
+
+/* Global */
+:root {
+  --color-primary: #252525;
+  --color-secondary: #252525;
+  --color-highlight: #fddef9;
+  --color-light: #1a8fe3;
+  --color-dark: #485161;
+  --color-bg: #efefef;
+  --size-step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --size-step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+  --size-step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+  --size-step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+  --size-step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+  font-size: var(--size-step-0);
+  line-height: 1.7;
+  padding: 2em;
+}
+
+h1, h2, h3 {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-secondary);
+}
+
+h1 {
+  font-size: var(--size-step-4);
+}
+
+h2 {
+  font-size: var(--size-step-3);
+}
+
+h3 {
+  font-size: var(--size-step-2);
+}
+
+article > * {
+  max-width: 65ch;
+}
+
+blockquote {
+  max-width: 50ch;
+}
+
+h1 {
+  max-width: 20ch;
+}
+
+h2,
+h3 {
+  max-width: 28ch;
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--color-light);
+  text-decoration-thickness: 0.3ex;
+  text-underline-offset: 0.3ex;
+}
+
+/* Utilities */
+section > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+:is(h1, h2, h3, blockquote) {
+  --flow-space: 1.5em;
+}
+
+:is(h1, h2, h3) + * {
+  --flow-space: 0.5em;
+}
+
+.wrapper {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.text-highlight {
+  color: var(--color-highlight);
+}
